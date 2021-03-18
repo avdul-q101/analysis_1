@@ -1,0 +1,13 @@
+-- first block of pl/sql code
+
+select o.* from
+data_on o
+where count in (select max(count) over(partition by period,sex) from data_on where age<>'Total' and sex<>'Total')
+
+--run this one by one
+
+
+
+
+select * from data_on
+
